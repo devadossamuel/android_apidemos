@@ -8,30 +8,21 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import ru.yandex.qatools.allure.annotations.Step;
 
-public class MainScreen {
+public class DateWidgetsScreen {
 
-	@AndroidFindBy(accessibility = "App")
-	private MobileElement app;
-	
-	@AndroidFindBy(accessibility = "Views")
-	private MobileElement views;
+	@AndroidFindBy(accessibility = "1. Dialog")
+	private MobileElement dialogTab;
 
 	private AppiumDriver<MobileElement> driver;
 
-	public MainScreen(AppiumDriver<MobileElement> driver) {
+	public DateWidgetsScreen(AppiumDriver<MobileElement> driver) {
 		this.driver = driver;
 		PageFactory.initElements(new AppiumFieldDecorator(this.driver), this);
 	}
-
-	@Step("Select 'App' tab")
-	public AppScreen selectAppTab() {
-		app.click();
-		return new AppScreen(driver);
-	}
 	
-	@Step("Select 'Views' tab")
-	public ViewsScreen selectViewsTab() {
-		views.click();
-		return new ViewsScreen(driver);
+	@Step
+	public DateWidgetDialogScreen selectDialogTab() {
+		dialogTab.click();
+		return new DateWidgetDialogScreen(driver);
 	}
 }

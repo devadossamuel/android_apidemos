@@ -39,10 +39,11 @@ public class Mobile {
 		
 //		capabilities.setCapability("platformName", "android");
 		capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, MobilePlatform.ANDROID);
-		capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "5.0.2");
+		capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "7.1.1");
 		capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Emulator");
 		capabilities.setCapability(MobileCapabilityType.APP, appPath());
-		capabilities.setCapability(AndroidMobileCapabilityType.AVD, "Galaxy_Nexus_API_22");
+//		capabilities.setCapability(AndroidMobileCapabilityType.AVD, "Galaxy_Nexus_API_22");
+		capabilities.setCapability(AndroidMobileCapabilityType.AVD, "Pixel_XL_API_25");
 		
 		AndroidDriver<MobileElement> driver = null;
 		try {
